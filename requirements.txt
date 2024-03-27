@@ -1,0 +1,8 @@
+numpy
+pandas
+transformers
+faiss-gpu
+pillow
+tqdm
+jsonschema
+click

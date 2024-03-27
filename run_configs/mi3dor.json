@@ -1,0 +1,22 @@
+{
+    "run_name": "mi3dor_trainsynth_testreal_resize",
+    "data_train_roots": [
+        "./data/datasets/mi3dor/train_synth"
+    ],
+    "data_test_roots": [
+        "./data/datasets/mi3dor/test_real"
+    ],
+    "out_root_dir": "./out",
+    "seed": 42,
+    "splits": [
+        {
+            "split_name": "traintest_full"
+        }
+    ],
+    "feature_extractors": [
+        {
+            "feature_extractor_name": "convnext_s",
+            "feature_dims": 768
+        }
+    ]
+}

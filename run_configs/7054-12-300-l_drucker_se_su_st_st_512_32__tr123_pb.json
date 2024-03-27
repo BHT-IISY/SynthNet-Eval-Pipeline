@@ -1,0 +1,22 @@
+{
+    "run_name": "7054-12-300-l_drucker_se_su_st_st_512_32__tr123_pb",
+    "data_train_roots": [
+        "./data/synthnet/train/7054-12-300-l_drucker_se_su_st_st_512_32"
+    ],
+    "data_test_roots": [
+        "./data/synthnet/test/topex-real-123_pb_256"
+    ],
+    "out_root_dir": "./out",
+    "seed": 42,
+    "splits": [
+        {
+            "split_name": "traintest_full"
+        }
+    ],
+    "feature_extractors": [
+        {
+            "feature_extractor_name": "vit_in21k",
+            "feature_dims": 768
+        }
+    ]
+}

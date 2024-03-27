@@ -1,0 +1,26 @@
+{
+    "run_name": "minimal_example",
+    "data_train_roots": [
+        "./data/minimal_example/train"
+    ],
+    "data_test_roots": [
+        "./data/minimal_example/test"
+    ],
+    "out_root_dir": "./out",
+    "seed": 42,
+    "splits": [
+        {
+            "split_name": "traintest_full"
+        }
+    ],
+    "feature_extractors": [
+        {
+            "feature_extractor_name": "vit_in21k",
+            "feature_dims": 768
+        },
+        {
+            "feature_extractor_name": "dino_vitb16_in1k",
+            "feature_dims": 768
+        }
+    ]
+}

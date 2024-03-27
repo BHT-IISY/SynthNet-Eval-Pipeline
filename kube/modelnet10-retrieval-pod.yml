@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: synthnet-retrieval-modelnet10
+spec:
+  restartPolicy: Never
+  containers:
+  - name: synthnet-retrieval-modelnet10
+    image: beuthdritter/synthnet-evaluation-pipeline
+    volumeMounts:
+            - name: synthnet-retrieval-volume
+              mountPath: /workspace/data
+            - name: output-volume
+              mountPath: /workspace/out
+    command:
+      [
+        "python",
+        "run_retrieval.py" ,
+        "-c" ,
+        "run_configs/modelnet10.json",
+      ]
+    resources:
+      requests:
+        memory: "16Gi"
+        cpu: "16"
+      limits:
+        nvidia.com/gpu: 1
+        memory: "32Gi"
+        cpu: "64"
+  nodeSelector:
+    gpu: v100
+  volumes:
+  - name: synthnet-retrieval-volume 
+    persistentVolumeClaim:
+      claimName: synthnet-retrieval-pvc
+  - name: output-volume 
+    persistentVolumeClaim:
+      claimName: output-pvc
